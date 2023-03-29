@@ -1,0 +1,158 @@
+/* 사진 200px 아이콘 25px  */
+/* scrollbar css(chrome) */
+::-webkit-scrollbar {width:10px; height:10px;}
+::-webkit-scrollbar-track {background:#ccc;}
+::-webkit-scrollbar-thumb {
+    background:#222
+    border-radius:5px;
+}
+
+/* design */
+body {
+    background-image:url(../images/7598163.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+    overflow-x: hidden;
+}
+main {
+    display:flex; flex-flow:column nowrap;
+    align-items:center;
+    justify-content:center; height:100vh;
+}
+main .photo {
+    width:200px; height:200px;
+    background-color:aqua;
+    border: 7px solid #fff; overflow:hidden;
+    border-radius:50%;
+    animation:photo 1.5s linear alternate infinite;
+}
+
+main .photo img {width:100%;}
+main h1 {
+    font-family: 'Lobster', cursive; font-size:2rem; margin-top:30px; font-weight:700;
+    text-transform:capitalize;
+    background:linear-gradient(to right, #ff00ff, #00ffff, #ff00ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-size:400%;
+    animation:bg 10s linear infinite;
+}
+main .loading {
+    display:inline-block; 
+    width:300px; height:10px; 
+    background-color: #fff; 
+    border-radius:10px;
+    margin-top:20px;
+    overflow:hidden;
+}
+main .loading .bar {
+    background:#ff00ff; display:block;
+    width:100%; height:10px;
+    transform:scaleX(0);
+    transition:all 3s ease; 
+    transform-origin:left center;
+}
+
+/* photo 마우스 오버 시 bar 변화 주기 */
+main .photo:hover ~ .loading .bar {
+    /* background-color: #00ffff; */
+    transform:scaleX(1);    
+}
+
+
+main p {font-weight:700; margin-top:50px;}
+main .sns {
+    /* background-color:pink; */
+    display:flex; flex-flow:row nowrap; justify-content:center;
+    margin-top:25px;
+}
+main .sns a {
+    width:25px; margin-right:20px;
+    display:flex; flex-flow:column nowrap; 
+    /* justify-content: center; */
+    align-items:center;
+}
+main .sns a:last-child {margin:0;}
+main .sns a img {width:100%; }
+main .sns a .tip {
+    font-family: 'Lobster', cursive;
+    background:#222; color:#fff; padding:5px;
+    transform:translateY(10px);
+    opacity:0;
+}
+main .sns a:hover .tip {opacity:1;}
+
+/* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 *//* gnb 메뉴 */
+main .gnb {
+    /* background:aqua; */
+    width:30px; height:25px;
+    display:block;
+    position:relative;
+}
+main .gnb span {
+    background:#222; width:100%; height:5px;
+    border-radius:10px;
+    position:absolute; transition:all 0.4s;
+}
+main .gnb span:nth-child(1) {top:0;}
+main .gnb span:nth-child(2) {top:10px;}
+main .gnb span:nth-child(3) {bottom:0;}
+
+/* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover *//* gnb-hover */
+/* main .gnb:hover span { transition:all 0.4s;} */
+main .gnb:hover span:nth-child(1) {transform:translateY(10px) rotate(45deg);}
+main .gnb:hover span:nth-child(2) {opacity:0;}
+main .gnb:hover span:nth-child(3) {transform:translateY(-10px) rotate(-45deg);}
+/* div-bg */
+.bg {}
+.bg > div {
+    background: url(../images/bg_new.png) repeat-x;
+    width:150%; height:100px;
+}
+.bg .txt1 {
+    filter:hue-rotate(45deg);
+    transform:rotate(-10deg) translateX(-100px);
+    animation:txt_bg 150s linear infinite reverse;
+}
+.bg .txt2 {
+    filter:invert(5);
+    background-color:rgba(255,255,255,0.7);
+    background-position-y:13px;
+    transform:rotate(4deg) translateX(-100px);
+    animation:txt_bg 150s linear infinite;
+}
+/* 코카콜라 */
+.project {margin:150px 0;}
+.project .project_container {
+    max-width:1300px; margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+.project .project_container a {
+    background:url(../images/bg.jpg) no-repeat; margin-right:7px;
+    background-size:150%; height:350px;
+    border-top-left-radius:100px;
+    border-top-right-radius:100px;
+    position:relative;
+    transition:all 0.5s;
+}
+.project .project_container a:hover {
+    background-size:170%;
+    box-shadow:5px 5px 10px rgba(0,0,0,0.8);
+}
+.project .project_container a .intro {
+    background-color: #fff; text-align:center;
+    position:absolute; bottom:0; width:100%; padding:20px;
+}
+.project .project_container a .intro > * {line-height:1.5em;}
+.project .project_container a .intro h1 {font-weight:700;}
+.project .project_container a .intro h2 {}
+.project .project_container a .intro p {}
+footer {
+    margin:200px 0;
+    color:#fff; text-align:center;
+    font-size:2rem;line-height:1.5em; 
+    text-transform:capitalize;
+    /* text-shadow: #222; */
+    text-shadow : 0 0 4px #333;
+}
